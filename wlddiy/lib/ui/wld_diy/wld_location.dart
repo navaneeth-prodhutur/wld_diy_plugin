@@ -15,10 +15,10 @@ class WldLocationName extends StatefulWidget {
 
 class _WldLocationNameState extends State<WldLocationName> {
   List<LocationName> _locationDataList = [
-    LocationName('Home', 'assets/images/house.png',false),
-    LocationName('Guest House', 'assets/images/police-station.png',false),
-    LocationName('Office', 'assets/images/work.png',false),
-    LocationName('custom', 'assets/images/house.png',true),
+    LocationName('Home', 'assets/images/house.png', false),
+    LocationName('Guest House', 'assets/images/police-station.png', false),
+    LocationName('Office', 'assets/images/work.png', false),
+    LocationName('custom', 'assets/images/house.png', true),
   ];
 
   @override
@@ -33,8 +33,7 @@ class _WldLocationNameState extends State<WldLocationName> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xff3a93ff),
-              Colors.blue,
+              Color(0x993a93ff),
               Color(0xff3a93ff),
             ],
           ),
@@ -101,7 +100,7 @@ class _WldLocationNameState extends State<WldLocationName> {
         print("locationName entered is $locationName");
       });
     } else {
-        Navigator.push(context, SlideTopRoute(page: WldDeviceNameing()));
+      Navigator.push(context, SlideTopRoute(page: WldDeviceNameing()));
     }
   }
 
@@ -113,7 +112,7 @@ class _WldLocationNameState extends State<WldLocationName> {
         itemBuilder: (context, index) {
           return InkWell(
             child: LocationNameCard(locationDataList[index]),
-            onTap: () => _navigateNext(context,locationDataList[index]),
+            onTap: () => _navigateNext(context, locationDataList[index]),
           );
         },
         itemCount: locationDataList.length,

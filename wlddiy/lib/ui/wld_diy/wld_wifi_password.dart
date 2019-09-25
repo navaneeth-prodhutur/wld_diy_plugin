@@ -68,7 +68,8 @@ class _WldWifiPasswordState extends State<WldWifiPassword> {
                   )),
               Container(
                 height: height * 0.1,
-                color: Colors.amberAccent,
+                width: MediaQuery.of(context).size.width,
+                padding: const EdgeInsets.all(15.0),
                 child: RaisedButton(
                     padding: const EdgeInsets.all(8.0),
                     textColor: Colors.blue,

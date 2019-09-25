@@ -37,37 +37,53 @@ class _WldInstallState extends State<WldInstall>
     final color = Colors.white;
     _scale = 1 - _controller.value;
 
+    var height = MediaQuery.of(context).size.height;
     return Material(
-      type: MaterialType.transparency,
-      child: Container(
-        padding: EdgeInsets.only(left: 20, right: 20),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xCC3a93ff),
-              Color(0xff3a93ff),
-            ],
+        type: MaterialType.transparency,
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xCC3a93ff),
+                Color(0xff3a93ff),
+              ],
+            ),
           ),
-        ),
-        child: Column(
-          children: <Widget>[
+          child: Column(children: <Widget>[
             Container(
-              height: MediaQuery.of(context).size.height * 0.9,
+                height: height * 0.15,
+                child: DelayedAimation(
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: Text('Water leak detector'.toUpperCase(),
+                          textDirection: TextDirection.ltr,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              color: Color(0xFFF9F9FB), fontSize: 24)),
+                    ),
+                  ),
+                  delay: delayedAmount + 500,
+                )),
+            Container(
+              height: height * 0.7,
               child: getBodyWidget(),
             ),
             Container(
-                padding: EdgeInsets.only(bottom: 20),
-                height: MediaQuery.of(context).size.height * 0.1,
+                height: height * 0.15,
                 width: MediaQuery.of(context).size.width,
+                padding: EdgeInsets.all(30),
                 child: DelayedAimation(
                   delay: delayedAmount + 4000,
                   child: RaisedButton(
                       padding: const EdgeInsets.all(8.0),
                       textColor: Colors.blue,
                       color: Colors.white,
-                      onPressed: () => _navigateNext(context),
+                      onPressed: () {
+                        _navigateNext(context);
+                      },
                       child: Text(
                         _connectBtnTapped
                             ? 'Searching for devices...'
@@ -76,38 +92,27 @@ class _WldInstallState extends State<WldInstall>
                       ),
                       shape: RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(10.0))),
-                ))
-          ],
-        ),
-      ),
-    );
+                )),
+          ]),
+        ));
   }
 
   Widget getBodyWidget() {
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          SizedBox(height: 10),
-          DelayedAimation(
-            child: Text('Water leak detector'.toUpperCase(),
-                textDirection: TextDirection.ltr,
-                textAlign: TextAlign.left,
-                style: TextStyle(color: Color(0xFFF9F9FB), fontSize: 24)),
-            delay: delayedAmount + 500,
-          ),
-          SizedBox(height: 30),
+         
           DelayedAimation(
             child: Align(
-              alignment: Alignment.centerLeft,
+              alignment: Alignment.center,
               child: Text('Power up your water leak detector',
                   style: TextStyle(color: Color(0xFFF9F9FB), fontSize: 20)),
             ),
             delay: delayedAmount + 1000,
           ),
-          SizedBox(height: 20),
           DelayedAimation(
             child: Text(
                 'Install batteries in your Water Leak and Freeze Detector. You\'ll see the detector\'s LED pulse blue as it pairs with the app.',
@@ -115,7 +120,7 @@ class _WldInstallState extends State<WldInstall>
                 style: TextStyle(color: Color(0xB3F9F9FB), fontSize: 18)),
             delay: delayedAmount + 2000,
           ),
-          SizedBox(height: 80),
+          SizedBox(height: 20,),
           DelayedAimation(
             delay: delayedAmount + 3000,
             child: Container(
@@ -134,14 +139,13 @@ class _WldInstallState extends State<WldInstall>
               ),
             ),
           ),
-          if (_connectBtnTapped)
-            Container(
-                height: 200,
-                width: MediaQuery.of(context).size.width,
-                child: FlareActor("assets/linear_load.flr",
-                    alignment: Alignment.center,
-                    fit: BoxFit.fitHeight,
-                    animation: "Untitled"))
+          Container(
+              height: 100,
+              width: MediaQuery.of(context).size.width,
+              child: FlareActor("assets/linear_load.flr",
+                  alignment: Alignment.center,
+                  fit: BoxFit.fitHeight,
+                  animation: "Untitled"))
         ],
       ),
     );
@@ -155,6 +159,5 @@ class _WldInstallState extends State<WldInstall>
     Timer(Duration(seconds: 10), () {
       Navigator.push(context, SlideTopRoute(page: WldLocationName()));
     });
-    
   }
 }

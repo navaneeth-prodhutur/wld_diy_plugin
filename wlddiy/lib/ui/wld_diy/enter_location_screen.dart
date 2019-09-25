@@ -35,7 +35,7 @@ class _LocationEntryViewState extends State<LocationEntryView> {
                     onPressed: () =>
                         Navigator.of(context).pop(_textFieldController.text))),
             Container(
-              height: MediaQuery.of(context).size.height * 0.85,
+              height: MediaQuery.of(context).size.height * 0.7,
               child: getBodyWidget(context),
             ),
           ],
@@ -46,10 +46,10 @@ class _LocationEntryViewState extends State<LocationEntryView> {
 
   Widget getBodyWidget(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.only(left: 10,right: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        //mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text("Name your location",
               style: TextStyle(fontSize: 20, color: Colors.white70)),

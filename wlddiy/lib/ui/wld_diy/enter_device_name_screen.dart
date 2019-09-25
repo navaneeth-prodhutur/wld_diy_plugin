@@ -49,7 +49,7 @@ class _DeviceNameEntryViewState extends State<DeviceNameEntryView> {
       padding: const EdgeInsets.all(10.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        //mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
             "Name your device",

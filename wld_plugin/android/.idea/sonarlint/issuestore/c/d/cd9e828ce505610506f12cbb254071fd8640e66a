@@ -1,0 +1,22 @@
+
+fsquid:S00116/"NRename this field "TAG" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Âû
+U
+squid:S106¤"9Replace this use of System.out or System.err by a logger.(úç•§øÿÿÿÿ
+hsquid:S1192õ"KDefine a constant instead of duplicating this literal "do nothing" 3 times.(¥ÜÒ÷ùÿÿÿÿ
+Jsquid:S1068'"3Remove this unused "resultGetDevice" private field.(Çøëë
+Wsquid:S3398È"?Move this method into the anonymous class declared at line 108.(¢µÇ¤
+\squid:S3398Ş"?Move this method into the anonymous class declared at line 108.(íáø…ÿÿÿÿÿ
+csquid:CommentedOutCodeLine‚"<This block of commented-out lines of code should be removed.(ˆù¡
+\squid:S3398ñ"?Move this method into the anonymous class declared at line 108.(‚Ú³Şúÿÿÿÿ
+Ssquid:S1068&"7Remove this unused "resultDeviceOnboard" private field.(´çÇ©øÿÿÿÿ
+U
+squid:S106"9Replace this use of System.out or System.err by a logger.(øºÑûúÿÿÿÿ
+\squid:S3398‡"?Move this method into the anonymous class declared at line 108.(¿Í‡éùÿÿÿÿ
+\squid:S3398¥"?Move this method into the anonymous class declared at line 108.(ñÎñ†ûÿÿÿÿ
+Esquid:S1068(".Remove this unused "callChange" private field.(³„Ş 
+Ssquid:S2589@"7Remove this expression which always evaluates to "true"(ÓÉíãûÿÿÿÿ
+"squid:SwitchLastCaseIsDefaultCheck„"YComplete cases by adding the missing enum constants or add a default case to this switch.(˜–‚ïùÿÿÿÿ
+Wsquid:S3398œ"?Move this method into the anonymous class declared at line 108.(‘ÍµŒ
+Zsquid:S1155@">Use isEmpty() to check whether the collection is empty or not.(ÓÉíãûÿÿÿÿ
+U
+squid:S106±"9Replace this use of System.out or System.err by a logger.(ĞèÎÿúÿÿÿÿ
